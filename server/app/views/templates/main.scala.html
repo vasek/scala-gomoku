@@ -1,0 +1,43 @@
+@(title: String, header: Html = Html(""), javascripts: Html = Html(""))(content: Html = Html(""))
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>MI-PSL semestral work</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-theme.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        @header
+    </head>
+    <body>
+        <header class="header">
+            <nav class="container">
+                <ul>
+                    <li>
+                        <a href="@routes.Application.index()">Index</a>
+                    </li>
+                    <li>
+                        <a href="@routes.ChatController.index()">Chat</a>
+                    </li>
+                    <li>
+                        <a href="@routes.GomokuController.index()">Gomoku</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="title">
+            <div class="container">
+                <h1>@title</h1>
+            </div>
+        </div>
+        <div id="content" class="container">
+            @content
+        </div>
+        <script src="@routes.Assets.at("javascripts/jquery-2.1.4.min.js")"></script>
+        <script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+        @playscalajs.html.scripts("client", "/assets")
+        @javascripts
+    </body>
+</html>

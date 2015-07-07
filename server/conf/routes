@@ -1,0 +1,17 @@
+# Home page
+GET        /                      controllers.Application.index
+
+GET        /chat                  controllers.ChatController.index
+GET        /chat/routes           controllers.ChatController.jsRoutes
+GET        /chat/:username        controllers.ChatController.chat(username)
+
+GET        /gomoku                controllers.GomokuController.index
+GET        /gomoku/routes         controllers.GomokuController.jsRoutes
+GET        /gomoku/play           controllers.GomokuController.play
+GET        /gomoku/play/:id       controllers.GomokuController.board(id)
+GET        /gomoku/game/:id       controllers.GomokuController.game(id)
+
+# Static resources
+GET        /assets/*file          controllers.Assets.at(path="/public", file)
+
+    

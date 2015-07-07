@@ -1,0 +1,11 @@
+@javascripts = {
+    <script src="@routes.GomokuController.jsRoutes"></script>
+    <script>
+        $(function() {
+            application.GomokuJS().main();
+        });
+    </script>
+}
+@templates.main(title = "Gomoku", javascripts = javascripts) {
+
+}
